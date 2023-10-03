@@ -4,7 +4,7 @@
     <ul>
         @forelse ($notes as $note)
             <li>
-                <a href="#">{{$note->title}}</a>
+                <a href="#">{{$note->title}}</a> | <a href="{{route('note.edit')}}">Editar</a> | <a>Eliminar</a>
             </li>
         @empty
             <p>No data.</p>

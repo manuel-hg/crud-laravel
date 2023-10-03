@@ -15,4 +15,21 @@ class NoteController extends Controller
     public function create(){
         return view('note.create');
     }
+
+    public function store(Request $request){
+        /*$note = new Note;
+        $note->title = $request->title;
+        $note->description = $request->description;
+        $note->save();*/
+
+        Note::create([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+        return redirect()->route('note.index');
+    }
+
+    public function edit(Note $note){
+        return view('note.edit', compact('note'));
+    }
 }

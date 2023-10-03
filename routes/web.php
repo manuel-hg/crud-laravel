@@ -4,4 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/notes', [NoteController::class, 'index'])->name('note.index');
 Route::get('/notes/create', [NoteController::class, 'create'])->name('note.create');
+Route::get('/notes/edit/{note}', [NoteController::class, 'edit'])->name('note.edit');
+Route::post('/notes/store', [NoteController::class, 'store'])->name('note.store');
+
 
