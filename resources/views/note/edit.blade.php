@@ -1,6 +1,7 @@
 @extends('layouts.app');
 
 @section('content')
+    <a href="{{route('note.index')}}">Back</a>
     <form method="POST" action="">
         @csrf
         <label>Title:</label>
