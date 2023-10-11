@@ -4,7 +4,13 @@
     <ul>
         @forelse ($notes as $note)
             <li>
-                <a href="{{route('note.show', $note->id)}}">{{$note->title}} - {{$note->description}}</a> | <a href="{{route('note.edit', $note->id)}}">Editar</a> | <a>Eliminar</a>
+                <a href="{{route('note.show', $note->id)}}">{{$note->title}} - {{$note->description}}</a> | <a href="{{route('note.edit', $note->id)}}">Editar</a> |
+                <form method="POST" action="{{route('note.delete', $note->id)}}">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="DELETE">
+                </form>
+                <a href="{{route('note.delete', $note->id)}}">Eliminar</a>
             </li>
         @empty
             <p>No data.</p>

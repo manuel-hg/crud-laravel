@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('layouts._partials.messages')
     @yield('content')
 </body>
 </html>
